@@ -19,6 +19,7 @@
 
 	<ItemGroup>
 		<None Include="../README.md" Pack="true" PackagePath="README.md" />
+		<None Include="../_HowlDevLogo.png" Pack="true" PackagePath="_HowlDevLogo.png" />
 		<PackageReference Include="Dapper" Version="2.1.66" />
 		<PackageReference Include="Npgsql" Version="9.0.3" />
 	</ItemGroup>
