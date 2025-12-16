@@ -3,6 +3,8 @@
 # HowlDev.Web.Helpers
 Contains a few helpers used often in web projects. 
 
+[Find a link to the wiki here](https://wiki.codyhowell.dev/web.helpers). 
+
 ## HowlDev.Web.Helpers.DbConnecter
 
 This is a single class that has 4 methods that helps deal with thread pooling from Dapper. It is supposed to be used like the following: 
