@@ -1,0 +1,68 @@
+name: Publish NuGet Packages
+
+on:
+  push:
+      paths:
+        - '**/*.csproj'
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    permissions:
+      id-token: write  # required for trusted publishing (OIDC)
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '8.0.x'
+
+      - name: Restore
+        run: dotnet restore
+
+      - name: Pack
+        run: dotnet pack -c Release --no-restore
+
+      # OIDC → short-lived NuGet API key
+      - name: NuGet login (OIDC)
+        uses: NuGet/login@v1
+        id: login
+        with:
+          user: ${{ secrets.NUGET_USER }}
+
+      - name: Publish packages per-project
+        env:
+          NUGET_API_KEY: ${{ steps.login.outputs.NUGET_API_KEY }}
+        run: |
+          set -euo pipefail
+
+          find . -name "*.nupkg" ! -name "*.symbols.nupkg" | while read nupkg; do
+            echo "----------------------------------------"
+            echo "Processing package: $nupkg"
+
+            output=$(dotnet nuget push "$nupkg" \
+              --api-key "$NUGET_API_KEY" \
+              --source https://api.nuget.org/v3/index.json \
+              --skip-duplicate \
+              2>&1)
+
+            echo "$output"
+
+            if echo "$output" | grep -q "already exists"; then
+              echo "Package already exists. Skipping symbols."
+              continue
+            fi
+
+            snupkg="${nupkg%.nupkg}.snupkg"
+            if [ -f "$snupkg" ]; then
+              echo "Publishing symbols: $snupkg"
+              dotnet nuget push "$snupkg" \
+                --api-key "$NUGET_API_KEY" \
+                --source https://api.nuget.org/v3/index.json
+            else
+              echo "No symbols package found for $nupkg"
+            fi
+          done

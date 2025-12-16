@@ -21,3 +21,14 @@ public Task<IEnumerable<Account>> GetAllUsersAsync() =>
 This is a method that returns like a get call, with the important `conn.WithConnectionAsync(async conn => {...})` call. In my experience, you run into thread pool locking pretty quick, so it's best just to start by using this. 
 
 AI happens to be pretty good at converting old calls into this format if you give it to them. 
+
+## Changelog
+
+1.0.1 (12/15/25)
+
+- Added workflow file
+- Targeted Net8.0 instead
+
+1.0 (12/13/25)
+
+- Created
