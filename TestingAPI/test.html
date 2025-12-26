@@ -1,0 +1,10 @@
+<html>
+    <body>
+        <h1>Socket</h1>
+        <script>
+            console.log("Starting socket reading...");
+            socket = new WebSocket("http://localhost:5106/ws/1")
+            socket.onmessage = (m) => console.log(m.data);
+        </script>
+    </body>
+</html>

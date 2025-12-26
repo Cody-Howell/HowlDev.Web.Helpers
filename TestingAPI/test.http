@@ -1,0 +1,8 @@
+@api = http://localhost:5106
+@id = 1
+
+###
+GET {{api}}/
+###
+GET {{api}}/post/{{id}}
+###

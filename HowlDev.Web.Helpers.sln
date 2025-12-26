@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HowlDev.Web.Helpers.DbConne
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HowlDev.Web.Helpers.WebSockets", "HowlDev.Web.Helpers.WebSockets\HowlDev.Web.Helpers.WebSockets.csproj", "{D9E9B935-E5F3-C457-3741-808C3141801A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestingAPI", "TestingAPI\TestingAPI.csproj", "{D27650C5-B6D3-42E1-B359-D24200754E6E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -41,6 +43,18 @@ Global
 		{D9E9B935-E5F3-C457-3741-808C3141801A}.Release|x64.Build.0 = Release|Any CPU
 		{D9E9B935-E5F3-C457-3741-808C3141801A}.Release|x86.ActiveCfg = Release|Any CPU
 		{D9E9B935-E5F3-C457-3741-808C3141801A}.Release|x86.Build.0 = Release|Any CPU
+		{D27650C5-B6D3-42E1-B359-D24200754E6E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D27650C5-B6D3-42E1-B359-D24200754E6E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D27650C5-B6D3-42E1-B359-D24200754E6E}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{D27650C5-B6D3-42E1-B359-D24200754E6E}.Debug|x64.Build.0 = Debug|Any CPU
+		{D27650C5-B6D3-42E1-B359-D24200754E6E}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{D27650C5-B6D3-42E1-B359-D24200754E6E}.Debug|x86.Build.0 = Debug|Any CPU
+		{D27650C5-B6D3-42E1-B359-D24200754E6E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D27650C5-B6D3-42E1-B359-D24200754E6E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D27650C5-B6D3-42E1-B359-D24200754E6E}.Release|x64.ActiveCfg = Release|Any CPU
+		{D27650C5-B6D3-42E1-B359-D24200754E6E}.Release|x64.Build.0 = Release|Any CPU
+		{D27650C5-B6D3-42E1-B359-D24200754E6E}.Release|x86.ActiveCfg = Release|Any CPU
+		{D27650C5-B6D3-42E1-B359-D24200754E6E}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
